@@ -1,0 +1,394 @@
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git branch
+* Merge_Test_Branch
+  main
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git status
+On branch Merge_Test_Branch
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    Test_Program_One
+        modified:   Test_Program_Two.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        Test_Program_One.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git add .
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git commit -m "Changes Made For Merge_Test_Branch"
+[Merge_Test_Branch a95f588] Changes Made For Merge_Test_Branch
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+ rename Test_Program_One => Test_Program_One.py (91%)
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git push origin Merge_Test_Branch
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 512 bytes | 128.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'Merge_Test_Branch' on GitHub by visiting:
+remote:      https://github.com/mohanaprakash-v/GIT_Practise_5G/pull/new/Merge_Test_Branch
+remote:
+To https://github.com/mohanaprakash-v/GIT_Practise_5G.git
+ * [new branch]      Merge_Test_Branch -> Merge_Test_Branch
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git fetch origin
+>>
+remote: Enumerating objects: 6, done.
+remote: Counting objects: 100% (6/6), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (4/4), 2.53 KiB | 96.00 KiB/s, done.
+From https://github.com/mohanaprakash-v/GIT_Practise_5G
+   941638a..6da6542  main       -> origin/main
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git branch
+* Merge_Test_Branch
+  main
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git checkout -b Feature_Branch
+Switched to a new branch 'Feature_Branch'
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git branch
+* Feature_Branch
+  Merge_Test_Branch
+  main
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> 
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> touch File_1 File_2
+touch : The term 'touch' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of 
+the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ touch File_1 File_2
++ ~~~~~
+    + CategoryInfo          : ObjectNotFound: (touch:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git branch
+* Feature_Branch
+  Merge_Test_Branch
+  main
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git status
+On branch Feature_Branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        File_1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git add .
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git commit -m "Change One from Feature Branch - File One"
+[Feature_Branch 9c71891] Change One from Feature Branch - File One
+ 1 file changed, 1 insertion(+)
+ create mode 100644 File_1.txt
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git status      
+On branch Feature_Branch
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        File_2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git add .
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git commit -m "Change Two from Feature Branch - File Two"
+[Feature_Branch dd6b3ef] Change Two from Feature Branch - File Two
+ 1 file changed, 1 insertion(+)
+ create mode 100644 File_2.txt
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git log
+commit dd6b3eff439fdbf3eb66b684250732dfc7ea361f (HEAD -> Feature_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:24:35 2024 +0530
+
+    Change Two from Feature Branch - File Two
+
+commit 9c71891a1700f8c7c83da4805137f4e6c3f34631
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:22:44 2024 +0530
+
+    Change One from Feature Branch - File One
+
+commit a95f5883d25f39cebb389dbadeedc98bbd0e8f52 (origin/Merge_Test_Branch, Merge_Test_Branch)
+commit dd6b3eff439fdbf3eb66b684250732dfc7ea361f (HEAD -> Feature_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:24:35 2024 +0530
+
+    Change Two from Feature Branch - File Two
+
+commit 9c71891a1700f8c7c83da4805137f4e6c3f34631
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:22:44 2024 +0530
+
+    Change One from Feature Branch - File One
+
+commit a95f5883d25f39cebb389dbadeedc98bbd0e8f52 (origin/Merge_Test_Branch, Merge_Test_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+commit dd6b3eff439fdbf3eb66b684250732dfc7ea361f (HEAD -> Feature_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:24:35 2024 +0530
+
+    Change Two from Feature Branch - File Two
+
+commit 9c71891a1700f8c7c83da4805137f4e6c3f34631
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:22:44 2024 +0530
+
+    Change One from Feature Branch - File One
+
+commit a95f5883d25f39cebb389dbadeedc98bbd0e8f52 (origin/Merge_Test_Branch, Merge_Test_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 11:34:02 2024 +0530
+
+    Changes Made For Merge_Test_Branch
+commit dd6b3eff439fdbf3eb66b684250732dfc7ea361f (HEAD -> Feature_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:24:35 2024 +0530
+
+    Change Two from Feature Branch - File Two
+
+commit 9c71891a1700f8c7c83da4805137f4e6c3f34631
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:22:44 2024 +0530
+
+    Change One from Feature Branch - File One
+
+commit a95f5883d25f39cebb389dbadeedc98bbd0e8f52 (origin/Merge_Test_Branch, Merge_Test_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 11:34:02 2024 +0530
+
+    Changes Made For Merge_Test_Branch
+
+commit 941638a06a8b377f0759ee336f1e834518f111cc (main)
+Author: MohanaPrakash V <154406881+mohanaprakash-v@users.noreply.github.com>
+commit dd6b3eff439fdbf3eb66b684250732dfc7ea361f (HEAD -> Feature_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:24:35 2024 +0530
+
+    Change Two from Feature Branch - File Two
+
+commit 9c71891a1700f8c7c83da4805137f4e6c3f34631
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:22:44 2024 +0530
+
+    Change One from Feature Branch - File One
+
+commit a95f5883d25f39cebb389dbadeedc98bbd0e8f52 (origin/Merge_Test_Branch, Merge_Test_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 11:34:02 2024 +0530
+
+    Changes Made For Merge_Test_Branch
+
+commit 941638a06a8b377f0759ee336f1e834518f111cc (main)
+Author: MohanaPrakash V <154406881+mohanaprakash-v@users.noreply.github.com>
+Date:   Sun Nov 3 11:18:43 2024 +0530
+:...skipping...
+commit dd6b3eff439fdbf3eb66b684250732dfc7ea361f (HEAD -> Feature_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:24:35 2024 +0530
+
+    Change Two from Feature Branch - File Two
+
+commit 9c71891a1700f8c7c83da4805137f4e6c3f34631
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:22:44 2024 +0530
+
+    Change One from Feature Branch - File One
+
+commit a95f5883d25f39cebb389dbadeedc98bbd0e8f52 (origin/Merge_Test_Branch, Merge_Test_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 11:34:02 2024 +0530
+
+    Changes Made For Merge_Test_Branch
+
+commit 941638a06a8b377f0759ee336f1e834518f111cc (main)
+Author: MohanaPrakash V <154406881+mohanaprakash-v@users.noreply.github.com>
+Date:   Sun Nov 3 11:18:43 2024 +0530
+
+:...skipping...
+commit dd6b3eff439fdbf3eb66b684250732dfc7ea361f (HEAD -> Feature_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:24:35 2024 +0530
+
+    Change Two from Feature Branch - File Two
+
+commit dd6b3eff439fdbf3eb66b684250732dfc7ea361f (HEAD -> Feature_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:24:35 2024 +0530
+
+    Change Two from Feature Branch - File Two
+
+commit dd6b3eff439fdbf3eb66b684250732dfc7ea361f (HEAD -> Feature_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:24:35 2024 +0530
+
+    Change Two from Feature Branch - File Two
+
+commit 9c71891a1700f8c7c83da4805137f4e6c3f34631
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:22:44 2024 +0530
+
+    Change One from Feature Branch - File One
+
+commit a95f5883d25f39cebb389dbadeedc98bbd0e8f52 (origin/Merge_Test_Branch, Merge_Test_Branch)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 11:34:02 2024 +0530
+
+    Changes Made For Merge_Test_Branch
+
+commit 941638a06a8b377f0759ee336f1e834518f111cc (main)
+Author: MohanaPrakash V <154406881+mohanaprakash-v@users.noreply.github.com>
+Date:   Sun Nov 3 11:18:43 2024 +0530
+
+    Test_Program_Two
+
+commit 64f702bee8c8cdc205e4b7ceddeb2324e2d693bf
+Author: MohanaPrakash V <154406881+mohanaprakash-v@users.noreply.github.com>
+Date:   Sun Nov 3 11:17:08 2024 +0530
+
+    Test_Program_One
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git ll
+git: 'll' is not a git command. See 'git --help'.
+
+The most similar command is
+        pull
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git branch       
+* Feature_Branch
+  Merge_Test_Branch
+  main
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git checkout main
+Switched to branch 'main'
+Your branch is behind 'origin/main' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git status
+On branch main
+Your branch is behind 'origin/main' by 3 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        File_3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git add .
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git commit -m "Master Three from main Branch - File Three"   
+[main 40de0d5] Master Three from main Branch - File Three
+ 1 file changed, 1 insertion(+)
+ create mode 100644 File_3.txt
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git log
+commit 40de0d56b283d8b1b4c522b0ee37c9c5275d8807 (HEAD -> main)
+Author: MohanaPrakash V <mpsprakash2002@gmail.com>
+Date:   Sun Nov 3 12:31:28 2024 +0530
+
+    Master Three from main Branch - File Three
+
+commit 941638a06a8b377f0759ee336f1e834518f111cc
+Author: MohanaPrakash V <154406881+mohanaprakash-v@users.noreply.github.com>
+Date:   Sun Nov 3 11:18:43 2024 +0530
+
+    Test_Program_Two
+
+commit 64f702bee8c8cdc205e4b7ceddeb2324e2d693bf
+Author: MohanaPrakash V <154406881+mohanaprakash-v@users.noreply.github.com>
+Date:   Sun Nov 3 11:17:08 2024 +0530
+
+    Test_Program_One
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> ll
+ll : The term 'll' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the 
+name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:1
++ ll
++ ~~
+    + CategoryInfo          : ObjectNotFound: (ll:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> ls
+
+
+    Directory: C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        03-11-2024  12:30 PM             33 File_3.txt
+-a----        03-11-2024  12:29 PM            262 Test_Program_One
+-a----        03-11-2024  12:29 PM            436 Test_Program_Two.py
+
+
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git branch
+  Feature_Branch
+  Merge_Test_Branch
+* main
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git add .
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git commit -m "Master Four from main Branch - File Four"  
+[main badf8b7] Master Four from main Branch - File Four
+ 1 file changed, 1 insertion(+)
+ create mode 100644 File_4.txt
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> ls
+
+
+    Directory: C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        03-11-2024  12:30 PM             33 File_3.txt
+-a----        03-11-2024  12:35 PM             32 File_4.txt
+-a----        03-11-2024  12:29 PM            262 Test_Program_One
+-a----        03-11-2024  12:29 PM            436 Test_Program_Two.py
+
+
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git branch    
+  Feature_Branch
+  Merge_Test_Branch
+* main
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git rebase Feature_Branch main
+Successfully rebased and updated refs/heads/main.
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git branch
+  Feature_Branch
+  Merge_Test_Branch
+* main
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> ls
+
+
+    Directory: C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        03-11-2024  12:37 PM             23 File_1.txt
+-a----        03-11-2024  12:37 PM             27 File_2.txt
+-a----        03-11-2024  12:37 PM             33 File_3.txt
+-a----        03-11-2024  12:37 PM             32 File_4.txt
+-a----        03-11-2024  12:37 PM            258 Test_Program_One.py
+-a----        03-11-2024  12:37 PM            437 Test_Program_Two.py
+
+
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git branch
+  Feature_Branch
+  Merge_Test_Branch
+* main
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git checkout Feature_Branch
+Switched to branch 'Feature_Branch'
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> ls
+
+
+    Directory: C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        03-11-2024  12:37 PM             23 File_1.txt
+-a----        03-11-2024  12:37 PM             27 File_2.txt
+-a----        03-11-2024  12:37 PM            258 Test_Program_One.py
+-a----        03-11-2024  12:37 PM            437 Test_Program_Two.py
+
+
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> git push origin Feature_Branch
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (6/6), 642 bytes | 160.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+remote:
+remote: Create a pull request for 'Feature_Branch' on GitHub by visiting:
+remote:      https://github.com/mohanaprakash-v/GIT_Practise_5G/pull/new/Feature_Branch
+remote:
+To https://github.com/mohanaprakash-v/GIT_Practise_5G.git
+ * [new branch]      Feature_Branch -> Feature_Branch
+PS C:\Users\MOHANAPRAKASH\OneDrive\Documents\GitHub\GIT_Practise_5G> 
