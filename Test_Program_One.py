@@ -4,7 +4,7 @@ def isPalindrome(string):
     return s == s[::-1]
 
 
-string = "malayalam"
+string = "mango"
 result = isPalindrome(string)
 
 if result:
